@@ -1,0 +1,3 @@
+DESC:This module provides channel stats using MySQL.
+DESC:
+DESC:If unsure, DISABLE it.

@@ -1,0 +1,72 @@
+# mystats.english.lang
+#   language messages for the mystats module
+
+## MySQL stuff
+0xd010,Error while connecting to MySQL server!
+0xd011,Connected to MySQL server.
+0xd012,Disconnected from MySQL server.
+0xd013,MySQL error, please check that the module can connect to the server.
+
+## DCC commands
+0xd020,User '%s' succesfully added.\n
+0xd021,Host '%s' added to user '%s'.\n
+0xd022,Usage: +suser <handle> [hostmask]
+0xd023,Someone already exists by that name.
+0xd024,Usage: -suser <handle>
+0xd025,No such user!
+0xd026,User '%s' succesfully deleted.\n
+0xd027,Usage: +shost <handle> <hostmask>
+0xd028,No such host!
+0xd029,There is already such a host.
+0xd030,Usage: -shost <hostmask>
+0xd031,Host '%s' succesfully deleted.\n
+0xd032,Usage: smatch <handle>
+0xd033,*** Matching '%s':\n
+0xd034,--- Found %d match(es).\n
+0xd035,Usage: +schan <channel>
+0xd036,I'm not on that channel, do a +chan first, then +schan.
+0xd037,Now monitoring '%s'.\n
+0xd038,Usage: -schan <channel>
+0xd039,Stoped monitoring of '%s'. To delete all stats data use +spurge\n
+0xd040,Usage: spurge <channel>
+0xd041,Cant delete stats on an active channel.
+0xd042,Succesfully deleted all stats in '%s'.\n
+0xd055,Bot '%s' succesfully added.\n
+0xd056,Bot '%s' succesfully deleted.\n
+0xd057,Usage: +sbot <handle> [hostmask]
+0xd058,Usage: -sbot <handle>
+0xd060,You are trying to deleta a bot, please use -sbot instead.
+0xd061,You are trying to deleta a regular user, please use -suser instead.
+0xd062,NICKNAME
+0xd063,HANDLE
+0xd064,FLAGS
+0xd065,End of channel info.
+0xd081,    %s in %s now%s recognized as %s.\n
+
+## Categories
+0xd043,lines
+0xd044,words
+0xd045,joins
+0xd046,kicks
+0xd047,kicked
+0xd048,questions
+0xd049,topics
+0xd04A,actions
+0xd04B,online
+0xd04C,wpm
+
+## Public commands
+0xd071,No such category.
+0xd072,No users in database.
+0xd073,Usage: !stats <nick/-handle>
+0xd074,Usage: !place <nick/-handle> <order by>
+0xd075,Sorry, I dont have a stats rerord of that user.
+0xd076,Usage: !ranking <nick/-handle>
+0xd077,Usage: !words <nick/-handle>
+0xd078,Sorry, you are too quiet.
+0xd079,Usage: !uttered <word>
+0xd07A,Sorry, no one has said anything like '%s'.
+
+## Alphabetical characters
+0xd080,ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖØÙÚÛÜİŞßàáâãäåæçèéêëìíîïğñòóôõöøùúûüışÿ'
+

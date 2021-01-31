@@ -1,0 +1,103 @@
+1.77 (2004-03-28)
+-----------------
+* Added auto-cleaning of words rarely used to prevent large tables
+* Added an example conf-file and a sql file for manuall setup.
+
+1.62 (2004-02-18)
+-----------------
+* Added word counter.
+* Added !words command.
+* Added !uttered command.
+* Added daily optimazation of MySQL tables.
+
+1.58 (2003-12-16)
+-----------------
+* Fixed bug in mystats_dupe() causing a segfault (oops)
+
+1.50 (2003-11-05)
+-----------------
+* Fixed bug in .schannel from 1.42. (everyone's handle is *)
+* Fixed bug when loading the module manually with .loadmod
+
+1.42 (2003-11-02)
+-----------------
+* Added activity-by-hour to stats table and channel table.
+* Added ability to specify categories shown by !stats.
+* Added !place command.
+* Added ability to show stats for users who are offonline.
+* Added !ranking command.
+
+1.36 (2003-10-02)
+-----------------
+* Fixed online-bug from 1.24. (two clients = two minutes ...)
+
+1.24 (2003-10-01)
+-----------------
+* Added dcc command .schannel to show who's identifed.
+* Added online and wpm (words/minute) category for !top10 command.
+* Fixed online-bug from 1.12. (not working at all ;)
+
+1.12 (2003-09-15)
+-----------------
+* Added support for botflagged-user.
+* Changed online.mode definition (now 4=op 2=hop 1=voice 0=none)
+* Due to changing table-defenitions webfiles are not included.
+* Fixed closing MySQL connection on .unloadmod .
+* Fixed !top10 so it starts at 1 instead of 0. (again ;)
+* Fixed lastseen.
+* Fixed .smatch wildcard so that '*' works.
+* Fixed idle on public msg.
+
+1.0 (2003-08-27)
+----------------
+* Fixed some bugs in the php-pages.
+* Fixed kicked-counter.
+* Fixed !top10 so it starts at 1 instead of 0.
+
+1.0pre2 (2003-08-11)
+--------------------
+* Added a package of php files for web use.
+* Bugfixes: online-time counter, idle update.
+
+1.0pre1 (2003-07-24)
+--------------------
+* The module has been 100% rewriten and has a new table setup.
+* Multi-channelsuport is now _alot_ more flexible.
+* Added mysql-userfile support, eggdrop-userfile is now obsolete.
+* Added helpfile support.
+* Now using the built-in language system of the eggdrop.
+
+0.63 (2003-04-22)
+-----------------
+* Some bugfixes.
+
+0.56 (2003-04-19)
+-----------------
+* Added language-file support.
+* Added action counter.
+* Expmem now reports memory usage.
+
+0.48 (2003-04-18)
+-----------------
+* Multi channel support! =)
+* Pub-commands only works in active channels.
+* Added public command: !stats
+
+0.33 (2003-04-12)
+-----------------
+* Added public commands: !top10 and !quote
+* Added dcc commands: .sdrop .sreset .srename
+
+0.21 (2003-04-07)
+-----------------
+* Fixed the I-forgot-to-join-myself bug.
+* Optimized the Querying.
+* Added join, kick, kicked, question and topic counter,
+        lastspoke and randspoke.
+* Including a separate config file.
+* Fixed the Makefile.
+
+
+0.13 (2003-03-11)
+-----------------
+* Initial realese.

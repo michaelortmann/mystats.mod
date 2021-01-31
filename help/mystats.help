@@ -1,0 +1,67 @@
+%{help=+schan}%{+m}
+###  %b+schan%b <channel>
+   Starts monitoring a channel. You need to be on it.
+
+See also: -schan
+%{help=-schan}%{+m}
+###  %b-schan%b <channel>
+   Stops monitoring a channel. No stats will be lost.
+
+See also: +schan, spurge
+%{help=+suser}%{+m}
+###  %b+suser%b <handle> [host]
+   Adds stats user, with host preferibly.
+
+See also: -suser, match, +shost, -shost
+%{help=-suser}%{+m}
+###  %b-suser%b <handle>
+   Deletes user and all stats recors.
+
+See also: +suser, match, +shost, -shost
+%{help=smatch}%{+}
+###  %bsmatch%b <handle>
+   Shows a list of stats users matching handle. Use '%%' as wildcard.
+
+See also: +suser, -suser, +shost, -shost
+%{help=+shost}%{+m}
+###  %b+shost%b <handle> <host>
+   Adds host to stats user.
+
+See also: +suser, -suser, smatch, -shost
+%{help=-shost}%{+m}
+###  %b-shost%b <host>
+   Removes host linked to a stats user.
+
+See also: +suser, -suser, smatch, +shost
+%{help=+sbot}%{+m}
+###  %b+sbot%b <handle> [host]
+   Adds a bot to be regogniced by the stats module. Bots are exempt from the
+   general stats.
+
+See also: -suser, match, +shost, -shost, -sbot
+%{help=-sbot}%{+m}
+###  %b-sbot%b <handle>
+   Deletes bot.
+
+See also: +suser, match, +shost, -shost, +sbot
+%{help=schannel}%{+m}
+###  %bschannel%b <name>
+   List who's online on channel <name>.
+
+See also: +suser, match, +shost, -shost, +sbot
+%{help=mystats module}%{+m}
+###  %bmystats module%b
+   This module provides statistics collected from users using a MySQL server
+   to store data.
+
+   The following commands are provided by the stats module:
+%{+m}
+     %b+suser       -suser       +sbot       spurge%b
+     %b+schan       -schan       -sbot       smatch%b
+     %bschannel%b
+%{help=all}%{+m}
+###  %bmystats module%b commands
+%{+m}
+     %b+suser       -suser       +sbot       spurge%b
+     %b+schan       -schan       -sbot       smatch%b
+     %bschannel%b

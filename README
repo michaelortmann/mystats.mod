@@ -1,0 +1,153 @@
+README - MyStats.mod (v1.77)
+
+Content:
+--------
+
+ o Description
+ o Quick Installation
+ o Installation from tarball
+ o Installation with subversion
+ o Upgrading
+ o Further configuration
+ o Partyline commands
+ o Public chat commands
+ o Feedback
+
+
+Description:
+------------
+
+MyStats is a statistic module much like Stats.mod. The big diffrence
+between them both are that MyStats uses a MySQL server to store
+and keep track of data.
+
+MyStats no longer supports use of the internal userfile of the
+eggdrop. Versions prior to 1.0pre1 are no longer supported.
+
+
+Quick installation:
+-------------------
+
+Untar mystats-1.77.tar.gz in .../src/mod, then compile the eggdrop
+as usual. When compiled and installed run .../src/mod/mystats.mod/tools/setup.sh
+
+Start your eggdrop and enjoy.
+
+
+Installation from tarball:
+--------------------------
+
+Assuming you have a working MySQL server with a user and database all
+you need to do is follow a few simple steps.
+
+Un tar the eggdrop source at location of your choice, I will asume that
+the source is in ~/eggdrop1.6.15/.
+
+Move the mystats-1.77-pseudo.tar.gz to ~/eggdrop1.8.0/src/mod and untar.
+# mv mystats-1.77-pseudo.tar.gz ~/eggdrop1.8.0/src/mod
+# cd ~/eggdrop1.8.0/src/mod
+# tar -zxvf mystats-1.77-pseudo.tar.gz
+
+Go back to the root of the source-tree, configure, make and install. The
+make will use mysql_config to grab correct compilation flags and library
+paths. Please, verify that the output from mysql_config is correct.
+# cd ~/eggdrop1.8.0/
+# ./configure
+# make config
+# make && make install DEST=~/eggdrop
+
+When the eggdrop is installed you need to setup the MySQL tables and your
+eggdrop configuration file. All this is done by a script called setup.sh.
+# ~/eggdrop1.8.0/src/mod/mystats.mod/tools/setup.sh
+
+All done, hopfully your eggdrop will load withouth any errors :) If you
+want to make your MyStats module more personal, please take a look at the
+'Further configuration' section below.
+
+
+Upgrading
+---------
+
+You need to run update-from1.XX.sh found in .../mystats.mod/tools.
+
+ o From v1.0, v1.12, v1.24 or v1.36 run update-from1.36.sh
+ o From v1.42, v1.50 or v1.58 run update-from1.58.sh
+ o From v1.62 no update required.
+
+Versions prior to the 1.X serie are no longer supported.
+
+
+Further configuration
+---------------------
+
+MyStats has a word-counter, to enabel it set swords to 1, like so:
+# set swords 1
+
+You can use the 'scats' variable to specify which categories are to be shown
+by the !stats command. Ie, put this in your eggdrop.conf:
+# set scats "words kicks kicked actions online wpm"
+All valid categories are as follow: lines words joins kicks kicked questions
+topics actions online wpm . Please only use lowercase letters.
+
+You can change the category names as you wish. Just edit the language file
+where appropriate. The counters will still count the same thing, but if
+you want you can get the bot display 'words' as 'w0rdZ'.
+
+
+Partyline commands:
+-------------------
+
++suser <handle> [host]
+    Add a user with or withouth host.
+-suser <handle>
+    Delete a user.
++sbot <handle> [host]
+    Add a bot with or withouth host. Bots are exempted from the general stats.
+-sbot <handle>
+    Delete a bot.
++shost <handle> <host>
+    Add host to a user.
+-shost <host>
+    Remove host.
+smatch <handle>
+    List users. Use % as wildcard.
++schan <channel>
+    Start monitor channel (The bot needs to be on that channel).
+-schan <channel>
+    Stop monitor channel.
+spurge <channel>
+    Delete all stats in an inactive channel.
+schannel <channel>
+    Shows list of users with their handle.
+
+
+Public chat commands:
+---------------------
+
+!top10 [order by]
+    Shows top ten users, ordered by words as default.
+!stats [nick]
+    Shows your or nick's stats.
+!place [nick] [order by]
+    Shows nick's place, ordered by words as default.
+!ranking [nick]
+    Shows nicks' place in categories (using scats = showing same categories
+    as !stats).
+!words [nick]
+    Shows most used words (only aviable if 'swords' is set)
+!uttered [word]
+    Shows how many times users have said a word.
+
+If you want to specify a handle instead of a nick (ie if a user is offline) you
+can do so by adding a dash, '-': !stats -user_name
+
+
+Feedback:
+---------
+
+This module is no longer supported by the original author.
+If you have any problems, you're on your own.
+
+Modules updated for eggdrop 1.8:
+
+http://eggdrop.egg6.net/modules/

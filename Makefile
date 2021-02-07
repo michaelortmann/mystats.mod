@@ -33,12 +33,9 @@ mystats.o: .././mystats.mod/mystats.c .././mystats.mod/../module.h \
  ../../../src/lang.h ../../../src/eggdrop.h ../../../src/compat/in6.h \
  ../../../src/flags.h ../../../src/cmdt.h ../../../src/tclegg.h \
  ../../../src/tclhash.h ../../../src/chan.h ../../../src/users.h \
- ../../../src/compat/compat.h ../../../src/compat/base64.h \
- ../../../src/compat/inet_aton.h ../../../src/compat/snprintf.h \
- ../../../src/compat/gethostbyname2.h \
- ../../../src/compat/explicit_bzero.h ../../../src/compat/strlcpy.h \
- .././mystats.mod/../modvals.h ../../../src/tandem.h \
- .././mystats.mod/../irc.mod/irc.h \
+ ../../../src/compat/compat.h ../../../src/compat/snprintf.h \
+ ../../../src/compat/strlcpy.h .././mystats.mod/../modvals.h \
+ ../../../src/tandem.h .././mystats.mod/../irc.mod/irc.h \
  .././mystats.mod/../channels.mod/channels.h \
  .././mystats.mod/../server.mod/server.h .././mystats.mod/mystats.h \
  .././mystats.mod/language.h .././mystats.mod/settings.c \

@@ -295,9 +295,9 @@ char *mystats_start(Function *global_funcs) {
 
     /* Check dependencies */
     module_register(MODULE_NAME, mystats_table, 1, 77);
-    if (!module_depend(MODULE_NAME, "eggdrop", 108, 0)) {
-        module_undepend(MODULE_NAME);
-        return "This module requires Eggdrop 1.8.0 or later.";
+    if (!module_depend(MODULE_NAME, "eggdrop", 108, 4)) {
+      module_undepend(MODULE_NAME);
+      return "This module requires Eggdrop 1.8.4 or later.";
     }
 
     if(!(irc_funcs = module_depend(MODULE_NAME, "irc", 1, 5))) {

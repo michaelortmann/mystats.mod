@@ -87,7 +87,8 @@ static int mystats_top10(char *nick, char *host, char *handle, char *channel, ch
     sprintf(output, "Top10 (%s): ", get_language(0xd043 + cat));
     while ((row = mysql_fetch_row(result))) {
         str = (cat == 8)?mystats_tmcalc(atoi(row[1])):row[1];
-        sprintf(output, "%s%d.%s(%s) ", output, i++, row[0], str);
+        snprintf(output + strlen(output), (sizeof output) - strlen(output),
+                 "%d.%s(%s) ", i++, row[0], str);
         if (cat == 8)
             nfree(str);
     }
@@ -140,7 +141,8 @@ static int mystats_stats(char *nick, char *host, char *handle, char *channel, ch
     for (i = 0; i < 10; i++) {
         if (mystats_cat_show[i]) {
             str = (i == 8)?mystats_tmcalc(atoi(row[i])):row[i];
-            sprintf(output, "%s %s: %s,", output, get_language(0xd043 + i), str);
+            snprintf(output + strlen(output), (sizeof output) - strlen(output),
+                     " %s: %s,", get_language(0xd043 + i), str);
             if (i == 8)
                 nfree(str);
         }
@@ -294,8 +296,8 @@ static int mystats_ranking(char *nick, char *host, char *handle, char *channel, 
         }
 
         str = (i == 8)?mystats_tmcalc(atoi(row[1])):row[1];
-        sprintf(output, "%s #%d@%s(%s)", output, place,
-                get_language(0xd043 + i), str);
+        snprintf(output + strlen(output), (sizeof output) - strlen(output),
+                 " #%d@%s(%s)", place, get_language(0xd043 + i), str);
         if (i == 8)
             nfree(str);
 
@@ -362,7 +364,8 @@ static int mystats_words(char *nick, char *host, char *handle, char *channel, ch
 	
     sprintf(output, "Words (%s):", strlen(par)?par:nick);
     while ((row = mysql_fetch_row(result)))
-        sprintf(output, "%s %d.%s(%s)", output, i++, row[0], row[1]);
+        snprintf(output + strlen(output), (sizeof output) - strlen(output),
+                 " %d.%s(%s)", i++, row[0], row[1]);
 
     dprintf(DP_SERVER, "PRIVMSG %s :%s\n", channel, output);
     putlog(LOG_CMDS, channel, "<<%s>> !%s! words", nick, handle);
@@ -405,7 +408,8 @@ static int mystats_uttered(char *nick, char *host, char *handle, char *channel, 
         sprintf(output, "Uttered (%s):", par);
 
     while ((row = mysql_fetch_row(result))) {
-        sprintf(output, "%s %d.%s(%s)", output, i++, row[0], row[1]);
+        snprintf(output + strlen(output), (sizeof output) - strlen(output),
+                 " %d.%s(%s)", i++, row[0], row[1]);
     }
 
     dprintf(DP_SERVER, "PRIVMSG %s :%s\n", channel, output);

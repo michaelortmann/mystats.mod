@@ -248,9 +248,9 @@ static char *mystats_close() {
     rem_builtins(H_ctcp, mystats_ctcp_tbl);
 
     /* Unload hooks */
-    del_hook(HOOK_REHASH, mystats_hook_rehash);
-    del_hook(HOOK_MINUTELY, mystats_hook_minutely);
-    del_hook(HOOK_DAILY, mystats_hook_daily);
+    del_hook(HOOK_REHASH, (Function) mystats_hook_rehash);
+    del_hook(HOOK_MINUTELY, (Function) mystats_hook_minutely);
+    del_hook(HOOK_DAILY, (Function) mystats_hook_daily);
 
     /* Unload eggdrop.conf options */
     rem_tcl_strings(mystats_tcl_strings);
@@ -330,9 +330,9 @@ char *mystats_start(Function *global_funcs) {
     add_tcl_ints(mystats_tcl_ints);
 
     /* Add hooks */
-    add_hook(HOOK_REHASH, mystats_hook_rehash);
-    add_hook(HOOK_MINUTELY, mystats_hook_minutely);
-    add_hook(HOOK_DAILY, mystats_hook_daily);
+    add_hook(HOOK_REHASH, (Function) mystats_hook_rehash);
+    add_hook(HOOK_MINUTELY, (Function) mystats_hook_minutely);
+    add_hook(HOOK_DAILY, (Function) mystats_hook_daily);
 
     /* Add sensors */
     add_builtins(H_join, mystats_join_tbl);

@@ -175,7 +175,6 @@ static int mystats_dcc_addhost(struct userrec *u, int idx, char *par) {
 
 static int mystats_dcc_delhost(struct userrec *u, int idx, char *par) {
     MYSQL_RES *result;
-    MYSQL_ROW row;
     char *host;
     Context;
 
@@ -202,7 +201,7 @@ static int mystats_dcc_delhost(struct userrec *u, int idx, char *par) {
         return 0;
     }
 
-    row = mysql_fetch_row(result);
+    mysql_fetch_row(result);
     mysql_free_result(result);
 
     /* Delete host and sync channels */

@@ -161,7 +161,7 @@ static int mystats_place(char *nick, char *host, char *handle, char *channel, ch
     MYSQL_RES *result;
     MYSQL_ROW row;
     int cid, uid, cat = -1, i, place;
-    char *user, *order, *str;
+    char *user, *str;
     Context;
 
     /* Are we monitoring this channel? */
@@ -170,7 +170,6 @@ static int mystats_place(char *nick, char *host, char *handle, char *channel, ch
         return 0;
 
     user = newsplit(&par);
-    order = par;
 
     /* Get user */
     if (strlen(user) && user[0] == '-')

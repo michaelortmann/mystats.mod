@@ -17,9 +17,6 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  */
-/*
- * Sep 2010: updated by pseudo to run on eggdrop 1.8.0
- */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -292,7 +289,7 @@ char *mystats_start(Function *global_funcs) {
     Context;
 
     /* Check dependencies */
-    module_register(MODULE_NAME, mystats_table, 1, 77);
+    module_register(MODULE_NAME, mystats_table, 1, 78);
     if (!module_depend(MODULE_NAME, "eggdrop", 108, 4)) {
       module_undepend(MODULE_NAME);
       return "This module requires Eggdrop 1.8.4 or later.";

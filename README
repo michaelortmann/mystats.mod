@@ -1,4 +1,4 @@
-README - MyStats.mod (v1.77)
+README - MyStats.mod (v1.78)
 
 Content:
 --------
@@ -28,7 +28,7 @@ eggdrop. Versions prior to 1.0pre1 are no longer supported.
 Quick installation:
 -------------------
 
-Untar mystats-1.77.tar.gz in .../src/mod, then compile the eggdrop
+Untar mystats-1.78.tar.gz in .../src/mod, then compile the eggdrop
 as usual. When compiled and installed run .../src/mod/mystats.mod/tools/setup.sh
 
 Start your eggdrop and enjoy.
@@ -43,22 +43,22 @@ you need to do is follow a few simple steps.
 Un tar the eggdrop source at location of your choice, I will asume that
 the source is in ~/eggdrop1.6.15/.
 
-Move the mystats-1.77-pseudo.tar.gz to ~/eggdrop1.8.0/src/mod and untar.
-# mv mystats-1.77-pseudo.tar.gz ~/eggdrop1.8.0/src/mod
-# cd ~/eggdrop1.8.0/src/mod
-# tar -zxvf mystats-1.77-pseudo.tar.gz
+Move the mystats-1.78.tar.gz to ~/eggdrop-1.8.4/src/mod and untar.
+# mv mystats-1.78.tar.gz ~/eggdrop-1.8.4/src/mod
+# cd ~/eggdrop-1.8.4/src/mod
+# tar -zxvf mystats-1.78.tar.gz
 
 Go back to the root of the source-tree, configure, make and install. The
 make will use mysql_config to grab correct compilation flags and library
 paths. Please, verify that the output from mysql_config is correct.
-# cd ~/eggdrop1.8.0/
+# cd ~/eggdrop-1.8.4/
 # ./configure
 # make config
 # make && make install DEST=~/eggdrop
 
 When the eggdrop is installed you need to setup the MySQL tables and your
 eggdrop configuration file. All this is done by a script called setup.sh.
-# ~/eggdrop1.8.0/src/mod/mystats.mod/tools/setup.sh
+# ~/eggdrop-1.8.4/src/mod/mystats.mod/tools/setup.sh
 
 All done, hopfully your eggdrop will load withouth any errors :) If you
 want to make your MyStats module more personal, please take a look at the
@@ -147,7 +147,3 @@ Feedback:
 
 This module is no longer supported by the original author.
 If you have any problems, you're on your own.
-
-Modules updated for eggdrop 1.8:
-
-http://eggdrop.egg6.net/modules/

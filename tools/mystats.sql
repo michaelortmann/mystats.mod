@@ -1,8 +1,6 @@
 -- mystats.sql  -- part of mystats.mod
 -- Copyright (C) 2003  Douglas Cau <douglas@cau.se>
 --
---  $Id: mystats.sql 68 2004-03-24 17:04:44Z cau $
---
 -- Please try the setup.sh script before using the hard
 -- way of setting the mySQL tables up. This sql file will
 -- create tables with the prefix `mystats`.

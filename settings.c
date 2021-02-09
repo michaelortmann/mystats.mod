@@ -2,8 +2,6 @@
  * settings.c -- part of mystats.mod
  * Copyright (C) 2003  Douglas Cau <douglas@cau.se>
  *
- *  $Id: settings.c 57 2004-03-23 20:10:09Z cau $
- *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or

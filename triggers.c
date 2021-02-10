@@ -186,7 +186,7 @@ static int mystats_dcc_delhost(struct userrec *u, int idx, char *par) {
         return 0;
     }
 
-    /* Chek if there is such a host */
+    /* Check if there is such a host */
     sql_query("SELECT uid FROM %s_hosts WHERE mask = '%s'", SQL_PREFIX, host);
 
     result = mysql_store_result(&mysql);

@@ -208,7 +208,7 @@ static cmd_t mystats_load_tbl[] = {
 
 static int mystats_expmem() {
     Context;
-    /* No memory is beeing allocated */
+    /* No memory is being allocated */
 
     return 0;
 }

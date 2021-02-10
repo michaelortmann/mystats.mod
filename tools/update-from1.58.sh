@@ -5,7 +5,7 @@ echo "Copyright (C) 2003  Douglas Cau <douglas@cau.se>";
 echo "";
 
 echo "";
-echo "Enter MySQL host (localhost strongly recomended):";
+echo "Enter MySQL host (localhost strongly recommended):";
 read shost;
 
 echo "";

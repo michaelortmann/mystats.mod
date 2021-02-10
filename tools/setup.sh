@@ -8,7 +8,7 @@ echo "Enter location of your eggdrop.conf (ie /home/me/eggdrop/eggdrop.conf)";
 read CONF;
 
 echo "";
-echo "Enter MySQL host (localhost strongly recomended):";
+echo "Enter MySQL host (localhost strongly recommended):";
 read shost;
 
 echo "";

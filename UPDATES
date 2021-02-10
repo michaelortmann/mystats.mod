@@ -9,7 +9,7 @@
 - Added word counter.
 - Added !words command.
 - Added !uttered command.
-- Added daily optimazation of MySQL tables.
+- Added daily optimization of MySQL tables.
 1.58 2003-12-16
 - Fixed bug in mystats_dupe() causing a segfault (oops)
 1.50 2003-11-05
@@ -44,7 +44,7 @@
 - Added a package of php files for web use.
 - Bugfixes: online-time counter, idle update.
 1.0pre1 2003-07-24
-- The module has been 100% rewriten and has a new table setup.
+- The module has been 100% rewritten and has a new table setup.
 - Multi-channelsuport is now _alot_ more flexible.
 - Added mysql-userfile support, eggdrop-userfile is now obsolete.
 - Added helpfile support.

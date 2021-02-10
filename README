@@ -17,7 +17,7 @@ Content:
 Description:
 ------------
 
-MyStats is a statistic module much like Stats.mod. The big diffrence
+MyStats is a statistic module much like Stats.mod. The big difference
 between them both are that MyStats uses a MySQL server to store
 and keep track of data.
 
@@ -40,7 +40,7 @@ Installation from tarball:
 Assuming you have a working MySQL server with a user and database all
 you need to do is follow a few simple steps.
 
-Un tar the eggdrop source at location of your choice, I will asume that
+Un tar the eggdrop source at location of your choice, I will assume that
 the source is in ~/eggdrop1.6.15/.
 
 Move the mystats-1.78.tar.gz to ~/eggdrop-1.8.4/src/mod and untar.
@@ -60,7 +60,7 @@ When the eggdrop is installed you need to setup the MySQL tables and your
 eggdrop configuration file. All this is done by a script called setup.sh.
 # ~/eggdrop-1.8.4/src/mod/mystats.mod/tools/setup.sh
 
-All done, hopfully your eggdrop will load withouth any errors :) If you
+All done, hopefully your eggdrop will load without any errors :) If you
 want to make your MyStats module more personal, please take a look at the
 'Further configuration' section below.
 
@@ -74,13 +74,13 @@ You need to run update-from1.XX.sh found in .../mystats.mod/tools.
  o From v1.42, v1.50 or v1.58 run update-from1.58.sh
  o From v1.62 no update required.
 
-Versions prior to the 1.X serie are no longer supported.
+Versions prior to the 1.X series are no longer supported.
 
 
 Further configuration
 ---------------------
 
-MyStats has a word-counter, to enabel it set swords to 1, like so:
+MyStats has a word-counter, to enable it set swords to 1, like so:
 # set swords 1
 
 You can use the 'scats' variable to specify which categories are to be shown
@@ -98,11 +98,11 @@ Partyline commands:
 -------------------
 
 +suser <handle> [host]
-    Add a user with or withouth host.
+    Add a user with or without host.
 -suser <handle>
     Delete a user.
 +sbot <handle> [host]
-    Add a bot with or withouth host. Bots are exempted from the general stats.
+    Add a bot with or without host. Bots are exempted from the general stats.
 -sbot <handle>
     Delete a bot.
 +shost <handle> <host>
@@ -134,7 +134,7 @@ Public chat commands:
     Shows nicks' place in categories (using scats = showing same categories
     as !stats).
 !words [nick]
-    Shows most used words (only aviable if 'swords' is set)
+    Shows most used words (only available if 'swords' is set)
 !uttered [word]
     Shows how many times users have said a word.
 

@@ -8,18 +8,18 @@
 0xd013,MySQL error, please check that the module can connect to the server.
 
 ## DCC commands
-0xd020,User '%s' succesfully added.\n
+0xd020,User '%s' successfully added.\n
 0xd021,Host '%s' added to user '%s'.\n
 0xd022,Usage: +suser <handle> [hostmask]
 0xd023,Someone already exists by that name.
 0xd024,Usage: -suser <handle>
 0xd025,No such user!
-0xd026,User '%s' succesfully deleted.\n
+0xd026,User '%s' successfully deleted.\n
 0xd027,Usage: +shost <handle> <hostmask>
 0xd028,No such host!
 0xd029,There is already such a host.
 0xd030,Usage: -shost <hostmask>
-0xd031,Host '%s' succesfully deleted.\n
+0xd031,Host '%s' successfully deleted.\n
 0xd032,Usage: smatch <handle>
 0xd033,*** Matching '%s':\n
 0xd034,--- Found %d match(es).\n
@@ -27,12 +27,12 @@
 0xd036,I'm not on that channel, do a +chan first, then +schan.
 0xd037,Now monitoring '%s'.\n
 0xd038,Usage: -schan <channel>
-0xd039,Stoped monitoring of '%s'. To delete all stats data use +spurge\n
+0xd039,Stopped monitoring of '%s'. To delete all stats data use +spurge\n
 0xd040,Usage: spurge <channel>
 0xd041,Cant delete stats on an active channel.
-0xd042,Succesfully deleted all stats in '%s'.\n
-0xd055,Bot '%s' succesfully added.\n
-0xd056,Bot '%s' succesfully deleted.\n
+0xd042,Successfully deleted all stats in '%s'.\n
+0xd055,Bot '%s' successfully added.\n
+0xd056,Bot '%s' successfully deleted.\n
 0xd057,Usage: +sbot <handle> [hostmask]
 0xd058,Usage: -sbot <handle>
 0xd060,You are trying to deleta a bot, please use -sbot instead.

@@ -1,4 +1,4 @@
-README - MyStats.mod (v1.78)
+README - MyStats.mod (v1.79)
 
 Content:
 --------
@@ -28,7 +28,7 @@ eggdrop. Versions prior to 1.0pre1 are no longer supported.
 Quick installation:
 -------------------
 
-Untar mystats-1.78.tar.gz in .../src/mod, then compile the eggdrop
+Untar mystats.mod-1.79.tar.gz in .../src/mod, then compile the eggdrop
 as usual. When compiled and installed run .../src/mod/mystats.mod/tools/setup.sh
 
 Start your eggdrop and enjoy.
@@ -43,10 +43,10 @@ you need to do is follow a few simple steps.
 Un tar the eggdrop source at location of your choice, I will assume that
 the source is in ~/eggdrop1.6.15/.
 
-Move the mystats-1.78.tar.gz to ~/eggdrop-1.8.4/src/mod and untar.
-# mv mystats-1.78.tar.gz ~/eggdrop-1.8.4/src/mod
+Move the mystats.mod-1.79.tar.gz to ~/eggdrop-1.8.4/src/mod and untar.
+# mv mystats.mod-1.79.tar.gz ~/eggdrop-1.8.4/src/mod
 # cd ~/eggdrop-1.8.4/src/mod
-# tar -zxvf mystats-1.78.tar.gz
+# tar -zxvf mystats.mod-1.79.tar.gz
 
 Go back to the root of the source-tree, configure, make and install. The
 make will use mysql_config to grab correct compilation flags and library

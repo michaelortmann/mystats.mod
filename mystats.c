@@ -289,7 +289,7 @@ char *mystats_start(Function *global_funcs) {
     Context;
 
     /* Check dependencies */
-    module_register(MODULE_NAME, mystats_table, 1, 78);
+    module_register(MODULE_NAME, mystats_table, 1, 79);
     if (!module_depend(MODULE_NAME, "eggdrop", 108, 4)) {
       module_undepend(MODULE_NAME);
       return "This module requires Eggdrop 1.8.4 or later.";

@@ -1,7 +1,9 @@
+1.79 2022-12-12
+- Fixed typos. (Michael Ortmann)
 1.78 2021-02-09
--  Now also works with eggdrop 1.8.4. (Michael Ortmann)
+- Now also works with eggdrop 1.8.4. (Michael Ortmann)
 1.77-pseudo 2010-09
--  Modified to run on eggdrop 1.8.x (pseudo)
+- Modified to run on eggdrop 1.8.x (pseudo)
 1.77 2004-03-28
 - Added auto-cleaning of words rarely used to prevent large tables
 - Added an example conf-file and a sql file for manuall setup.

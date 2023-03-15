@@ -22,7 +22,6 @@ static int mystats_chan_byname(char *chan) {
     MYSQL_RES *result;
     MYSQL_ROW row;
     int cid;
-    Context;
 
     /* Get channel id by name */
     sql_query("SELECT cid FROM %s_chans WHERE name = '%s'", SQL_PREFIX, chan);
@@ -47,7 +46,6 @@ static void mystats_chan_join(char *name) {
     MYSQL_RES *result;
     MYSQL_ROW row;
     int status, cid;
-    Context;
 
     sql_query("SELECT status FROM %s_chans WHERE name = '%s'", SQL_PREFIX, name);
 
@@ -79,7 +77,6 @@ static int mystats_chan_status(int cid) {
     MYSQL_RES *result;
     MYSQL_ROW row;
     int status;
-    Context;
 
     /* Get channel status */
     sql_query("SELECT status FROM %s_chans WHERE cid = '%d'", SQL_PREFIX, cid);
@@ -104,7 +101,6 @@ static void mystats_chan_part(char *chan) {
     MYSQL_RES *result;
     MYSQL_ROW row;
     int cid;
-    Context;
 
     /* Clean up and set correct channel status */
     cid = mystats_chan_byname(chan);

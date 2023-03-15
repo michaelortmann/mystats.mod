@@ -23,7 +23,6 @@ static int mystats_user_bymask(char *host, char *nick) {
     MYSQL_ROW row;
     int uid = 0;
     char *longmask;
-    Context;
 
     /* Get user id by hostmask and nick */
     sql_query("SELECT mask, uid FROM %s_hosts", SQL_PREFIX);
@@ -55,7 +54,6 @@ static int mystats_user_bychan(char *nick, int cid) {
     MYSQL_RES *result;
     MYSQL_ROW row;
     int uid;
-    Context;
 
     /* Get user id by channel and nick */
     sql_query("SELECT uid FROM %s_online WHERE nick = '%s' AND cid = '%d'",
@@ -80,7 +78,6 @@ static int mystats_user_bychan(char *nick, int cid) {
 static int mystats_user_isbot(int uid) {
     MYSQL_RES *result;
     MYSQL_ROW row;
-    Context;
 
     /* Get user type */
     sql_query("SELECT type FROM %s_users WHERE uid = '%d'", SQL_PREFIX, uid);
@@ -101,7 +98,6 @@ static int mystats_user_isbot(int uid) {
 
 static void mystats_user_stats(int uid, int cid) {
     MYSQL_RES *result;
-    Context;
 
     if (mystats_user_isbot(uid))
         return;
@@ -128,7 +124,6 @@ static void mystats_user_synchost(char *host, int uid, int idx) {
     MYSQL_RES *result;
     MYSQL_ROW row;
     char *longmask;
-    Context;
 
     /* Get all channels to sync host in */
     sql_query("SELECT name FROM %s_chans WHERE status = '2'", SQL_PREFIX);
@@ -168,7 +163,6 @@ static void mystats_user_synchost(char *host, int uid, int idx) {
 static int mystats_user_mode(char *nick, int cid) {
     MYSQL_RES *result;
     MYSQL_ROW row;
-    Context;
 
     sql_query("SELECT mode FROM %s_online WHERE nick = '%s' AND cid = '%d'",
               SQL_PREFIX, nick, cid);
@@ -188,7 +182,6 @@ static int mystats_user_mode(char *nick, int cid) {
 
 static memberlist *mystats_user_getm(struct chanset_t *c, char *nick) {
     memberlist *m;
-    Context;
 
     for (m = c->channel.member; m && m->nick[0]; m = m->next)
         if (!strcmp(nick, m->nick))
@@ -200,7 +193,6 @@ static memberlist *mystats_user_getm(struct chanset_t *c, char *nick) {
 static char *mystats_user_cname(int uid) {
     MYSQL_RES *result;
     MYSQL_ROW row;
-    Context;
 
     sql_query("SELECT handle FROM %s_users WHERE uid = '%d'", SQL_PREFIX, uid);
     result = mysql_store_result(&mysql);
@@ -220,7 +212,6 @@ static char *mystats_user_cname(int uid) {
 static int mystats_user_byhand(char *hand) {
     MYSQL_RES *result;
     MYSQL_ROW row;
-    Context;
 
     sql_query("SELECT uid FROM %s_users WHERE handle = '%s'", SQL_PREFIX, hand);
     result = mysql_store_result(&mysql);

@@ -53,7 +53,6 @@ static int mystats_hook_rehash() {
     char SQL_NEW[256];
     int reconnect = 1, i;
     char *s = CAT_SHOW, *c;
-    Context;
 
     /* Reset scats */
     for (i = 0; i < 10; i++)
@@ -111,7 +110,6 @@ static int mystats_hook_rehash() {
 }
 
 static int mystats_hook_daily() {
-    Context;
 
     /* Cleanup words only used once, and not used for three days */
     sql_query("DELETE FROM %s_words WHERE count = 1 "
@@ -130,7 +128,6 @@ static int mystats_hook_minutely() {
     MYSQL_RES *result;
     MYSQL_ROW row;
     int *users;
-    Context;
 
     /* Add a minute to all online users */
     sql_query("SELECT cid, uid FROM %s_online", SQL_PREFIX);
@@ -193,7 +190,6 @@ static int mystats_hook_minutely() {
 
 static int mystats_setup(char *mod) {
     p_tcl_bind_list H_temp;
-    Context;
 
     if((H_temp = find_bind_table("pub")))
         add_builtins(H_temp, mystats_cmd_tbl);
@@ -207,14 +203,12 @@ static cmd_t mystats_load_tbl[] = {
 };
 
 static int mystats_expmem() {
-    Context;
     /* No memory is being allocated */
 
     return 0;
 }
 
 static void mystats_report(int idx, int details) {
-    Context;
     /* FIXME: Maybe display some nice info on what we'r doing? */
 
     return;
@@ -224,7 +218,6 @@ static char *mystats_close() {
     MYSQL_RES *result;
     MYSQL_ROW row;
     p_tcl_bind_list	H_temp;
-    Context;
 
     /* Unload language and helpfile */
     del_lang_section(MODULE_NAME);
@@ -286,10 +279,9 @@ char *mystats_start(Function *global_funcs) {
     int no_settings = 0;
     struct chanset_t *chan;
     global = global_funcs;
-    Context;
 
     /* Check dependencies */
-    module_register(MODULE_NAME, mystats_table, 1, 79);
+    module_register(MODULE_NAME, mystats_table, 1, 80);
     if (!module_depend(MODULE_NAME, "eggdrop", 108, 4)) {
       module_undepend(MODULE_NAME);
       return "This module requires Eggdrop 1.8.4 or later.";

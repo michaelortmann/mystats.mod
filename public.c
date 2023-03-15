@@ -25,7 +25,6 @@ static char *mystats_category[] = {
 
 static char *mystats_get_category(int cat) {
     char *str;
-    Context;
 
     str = nmalloc(33);
     sprintf(str, mystats_category[cat], SQL_PREFIX);
@@ -37,7 +36,6 @@ static int mystats_top10(char *nick, char *host, char *handle, char *channel, ch
     MYSQL_ROW row;
     int cid, cat = -1, i = 0;
     char output[512], *str;
-    Context;
 
     /* Are we monitoring this channel? */
     cid = mystats_chan_byname(channel);
@@ -105,7 +103,6 @@ static int mystats_stats(char *nick, char *host, char *handle, char *channel, ch
     MYSQL_ROW row;
     int cid, uid, i;
     char output[512], *str;
-    Context;
 
     /* Are we monitoring this channel? */
     cid = mystats_chan_byname(channel);
@@ -164,7 +161,6 @@ static int mystats_place(char *nick, char *host, char *handle, char *channel, ch
     MYSQL_ROW row;
     int cid, uid, cat = -1, i, place;
     char *user, *str;
-    Context;
 
     /* Are we monitoring this channel? */
     cid = mystats_chan_byname(channel);
@@ -245,7 +241,6 @@ static int mystats_ranking(char *nick, char *host, char *handle, char *channel, 
     MYSQL_ROW row;
     char output[512], *str;
     int cid, uid, i, l, place;
-    Context;
 
     /* Are we monitoring this channel? */
     cid = mystats_chan_byname(channel);
@@ -314,7 +309,6 @@ static int mystats_words(char *nick, char *host, char *handle, char *channel, ch
     MYSQL_ROW row;
     int cid, uid, total, i = 1;
     char output[512];
-    Context;
 
     /* Are we monitoring this channel? Are we counting words? */
     cid = mystats_chan_byname(channel);
@@ -378,7 +372,6 @@ static int mystats_uttered(char *nick, char *host, char *handle, char *channel, 
     MYSQL_ROW row;
     int cid, i = 1;
     char output[512];
-    Context;
 
     /* Are we monitoring this channel? Are we counting words? */
     cid = mystats_chan_byname(channel);

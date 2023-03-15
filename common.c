@@ -21,7 +21,6 @@
 static int is_alpha(int c) {
     char *str = MYSTATS_CHR_LIST;
     int i, len = strlen(str);
-    Context;
 
     for (i = 0; i < len; i++)
         if (c == *(str + i))
@@ -32,7 +31,6 @@ static int is_alpha(int c) {
 
 static char *sql_escape(char *str) {
     static char *rstr;
-    Context;
 
     rstr = nmalloc(strlen(str)*2+1);
     if(rstr)
@@ -47,7 +45,6 @@ static int sql_query(char *str, ...) {
     char	*estr;
     int		query_size,query_pos=0;
     int		l,myres;
-    Context;
 
     va_start(va, str);
     query_size = strlen(str)*2;
@@ -104,7 +101,6 @@ static int sql_query(char *str, ...) {
 
 static int mystats_countchar(char *text, char c) {
     int words = 0;
-    Context;
 
     if (c == ' ')
         words++;
@@ -120,7 +116,6 @@ static int mystats_countchar(char *text, char c) {
 static char *mystats_tmcalc(int min) {
     char *str;
     int week, day, hour;
-    Context;
 
     str = nmalloc(33);
     if (min >= 10080) {
@@ -144,7 +139,6 @@ static char *mystats_tmcalc(int min) {
 
 static int mystats_dupe(int uid, int cid, int *users) {
     int i = 0;
-    Context;
 
     while(users[i++] != -1) {
         if (users[i] == uid && users[(i)*2 + 1] == cid)
@@ -162,7 +156,6 @@ static void mystats_activity(int cid, int uid) {
     time_t rawtime;
     struct tm *local;
     int hour;
-    Context;
 
     rawtime = time(NULL);
     local = localtime(&rawtime);
@@ -180,7 +173,6 @@ static void mystats_activity(int cid, int uid) {
 }
 
 static void mystats_countword(char *str, int uid, int cid) {
-    Context;
 
     sql_query("UPDATE %s_words SET count = count+1 WHERE uid = '%d' AND word = '%s' "
               "AND cid = '%d'", SQL_PREFIX, uid, str, cid);
@@ -195,7 +187,6 @@ static void mystats_countword(char *str, int uid, int cid) {
 static void mystats_breakout(char *str, int uid, int cid) {
     char *next;
     int go = 1;
-    Context;
 
     if (!str || strlen(str) < 2)
         return;

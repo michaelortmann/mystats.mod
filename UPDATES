@@ -1,3 +1,6 @@
+1.80 2023-03-16
+- Remove Context. (Michael Ortmann)
+- Fixed typos. (Michael Ortmann)
 1.79 2022-12-12
 - Fixed typos. (Michael Ortmann)
 1.78 2021-02-09
@@ -71,4 +74,4 @@
 - Including a separate config file.
 - Fixed the Makefile.
 0.13 2003-03-11
-- Initial realese.
+- Initial release.

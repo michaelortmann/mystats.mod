@@ -22,7 +22,6 @@ static int mystats_dcc_adduser(struct userrec *u, int idx, char *par) {
     MYSQL_RES *result;
     MYSQL_ROW row;
     char *handle, *host;
-    Context;
 
     handle = newsplit(&par);
     host = newsplit(&par);
@@ -85,7 +84,6 @@ static int mystats_dcc_deluser(struct userrec *u, int idx, char *par) {
     MYSQL_RES *result;
     MYSQL_ROW row;
     char *handle;
-    Context;
 
     handle = newsplit(&par);
 
@@ -136,7 +134,6 @@ static int mystats_dcc_addhost(struct userrec *u, int idx, char *par) {
     MYSQL_RES *result;
     MYSQL_ROW row;
     char *handle, *host;
-    Context;
 
     handle = newsplit(&par);
     host = newsplit(&par);
@@ -176,7 +173,6 @@ static int mystats_dcc_addhost(struct userrec *u, int idx, char *par) {
 static int mystats_dcc_delhost(struct userrec *u, int idx, char *par) {
     MYSQL_RES *result;
     char *host;
-    Context;
 
     host = newsplit(&par);
 
@@ -218,7 +214,6 @@ static int mystats_dcc_match(struct userrec *u, int idx, char *par) {
     MYSQL_RES *result_main;
     MYSQL_ROW row;
     MYSQL_ROW host;
-    Context;
 
     if (!strlen(par)) {
         dprintf(idx, "%s\n", MYSTATS_USR_MATCHUSAGE);
@@ -259,7 +254,6 @@ static int mystats_dcc_addchan(struct userrec *u, int idx, char *par) {
     struct chanset_t *c;
     char *chan;
     int cid;
-    Context;
 
     chan = newsplit(&par);
     cid = mystats_chan_byname(chan);
@@ -288,7 +282,6 @@ static int mystats_dcc_delchan(struct userrec *u, int idx, char *par) {
     struct chanset_t *c;
     char *chan;
     int cid;
-    Context;
 
     chan = newsplit(&par);
     cid = mystats_chan_byname(chan);
@@ -317,7 +310,6 @@ static int mystats_dcc_delchan(struct userrec *u, int idx, char *par) {
 static int mystats_dcc_purge(struct userrec *u, int idx, char *par) {
     int cid, status;
     char *chan;
-    Context;
 
     chan = newsplit(&par);
     cid = mystats_chan_byname(chan);
@@ -347,7 +339,6 @@ static int mystats_dcc_addbot(struct userrec *u, int idx, char *par) {
     MYSQL_RES *result;
     MYSQL_ROW row;
     char *handle, *host;
-    Context;
 
     handle = newsplit(&par);
     host = newsplit(&par);
@@ -410,7 +401,6 @@ static int mystats_dcc_delbot(struct userrec *u, int idx, char *par) {
     MYSQL_RES *result;
     MYSQL_ROW row;
     char *handle;
-    Context;
 
     handle = newsplit(&par);
 
@@ -461,7 +451,6 @@ static int mystats_dcc_channel(struct userrec *u, int idx, char *par) {
     MYSQL_ROW row;
     unsigned int wnick, whand, cid;
     char *format, *handle;
-    Context;
 
     wnick = strlen(MYSTATS_LST_NICK);
     whand = strlen(MYSTATS_LST_HAND);

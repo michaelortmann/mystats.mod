@@ -20,7 +20,6 @@
 
 static int mystats_join(char *nick, char *host, char *handle, char *channel) {
     int cid, uid;
-    Context;
 
     if (match_my_nick(nick)) {
         mystats_chan_join(channel);
@@ -55,7 +54,6 @@ static cmd_t mystats_join_tbl[] = {
 
 static int mystats_part(char *nick, char *host, char *handle, char *channel) {
     int uid, cid;
-    Context;
 
     /* Are we monitoring this channel? */
     cid = mystats_chan_byname(channel);
@@ -88,7 +86,6 @@ static cmd_t mystats_part_tbl[] = {
 static int mystats_pubm(char *nick, char *host, char *handle, char *channel, char *text) {
     int cid, uid, words, questions;
     char str[512];
-    Context;
 
     /* Are we monitoring this channel? */
     cid = mystats_chan_byname(channel);
@@ -127,7 +124,6 @@ static int mystats_mode(char *nick, char *host, char *handle, char *channel,
                         char *mode, char *victim) {
     int cid, pmid, mid = 0;
     memberlist *m;
-    Context;
 
     /* Are we monitoring this channel? */
     cid = mystats_chan_byname(channel);
@@ -171,7 +167,6 @@ static cmd_t mystats_mode_tbl[] = {
 static int mystats_kick(char *nick, char *host, char *handle, char *channel,
                         char *target, char *reason) {
     int uid, cid, tid;
-    Context;
 
     /* Are we monitoring this channel? */
     cid = mystats_chan_byname(channel);
@@ -208,7 +203,6 @@ static cmd_t mystats_kick_tbl[] = {
 static int mystats_nick(char *nick, char *host, char *handle, char *channel,
                         char *newnick) {
     int cid;
-    Context;
 
     /* Are we monitoring this channel? */
     cid = mystats_chan_byname(channel);
@@ -229,7 +223,6 @@ static cmd_t mystats_nick_tbl[] = {
 
 static int mystats_topc(char *nick, char *host, char *handle, char *channel, char *topic) {
     int cid, uid;
-    Context;
 
     /* Are we monitoring this channel? */
     cid = mystats_chan_byname(channel);
@@ -259,7 +252,6 @@ static cmd_t mystats_topc_tbl[] = {
 static int mystats_ctcp(char *nick, char *host, char *handle, char *channel,
                         char *key, char *rest) {
     int cid, uid;
-    Context;
 
     /* Are we monitoring this channel? */
     cid = mystats_chan_byname(channel);

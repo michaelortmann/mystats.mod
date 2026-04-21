@@ -19,11 +19,11 @@
  */
 
 MYSQL       mysql;
-static char SQL_HOST[128];
-static char SQL_USER[16];
-static char SQL_PASS[16];
-static char SQL_DBASE[32];
-static char SQL_PREFIX[32];
+static char SQL_HOST[256];
+static char SQL_USER[128];
+static char SQL_PASS[256];
+static char SQL_DBASE[128];
+static char SQL_PREFIX[64];
 static char SQL_CASHE[256];
 static char CAT_SHOW[256];
 static int  COUNT_WORDS = 0;

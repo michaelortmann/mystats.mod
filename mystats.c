@@ -50,7 +50,7 @@ static Function *global = NULL, *server_funcs = NULL,
 
 
 static int mystats_hook_rehash() {
-    char SQL_NEW[256];
+    char SQL_NEW[sizeof SQL_CACHE];
     int reconnect = 1, i;
     char *s = CAT_SHOW, *c;
 
@@ -79,19 +79,18 @@ static int mystats_hook_rehash() {
         mystats_cat_show[8] = 1;
     }
 
-    /* Check if we need to reconnect */
-    if (strlen(SQL_CASHE)) {
-        sprintf(SQL_NEW, "%s:%s:%s:%s", SQL_HOST, SQL_USER, SQL_PASS, SQL_DBASE);
+    snprintf(SQL_NEW, sizeof SQL_NEW, "%s:%s:%s:%s", SQL_HOST, SQL_USER, SQL_PASS, SQL_DBASE);
 
-        if (!strcmp(SQL_NEW, SQL_CASHE))
-            reconnect = 0;
+    /* Check if we need to reconnect */
+    if (!strcmp(SQL_NEW, SQL_CACHE)) {
+        reconnect = 0;
     }
 
     /* Close if we have an open connection */
-    if (reconnect && strlen(SQL_CASHE)) {
+    if (reconnect && *SQL_CACHE) {
         putlog(LOG_MISC, "*", "MyStats: %s", MYSTATS_SQL_CLOSE);
         mysql_close(&mysql);
-	}
+    }
 
     /* Open fresh connection if we need to */
     if (reconnect) {
@@ -103,7 +102,7 @@ static int mystats_hook_rehash() {
         }
 
         putlog(LOG_MISC, "*", "MyStats: %s", MYSTATS_SQL_OPEN);
-        sprintf(SQL_CASHE, "%s:%s:%s:%s", SQL_HOST, SQL_USER, SQL_PASS, SQL_DBASE);
+        strcpy(SQL_CACHE, SQL_NEW);
     }
 
     return 0;
@@ -281,7 +280,7 @@ char *mystats_start(Function *global_funcs) {
     global = global_funcs;
 
     /* Check dependencies */
-    module_register(MODULE_NAME, mystats_table, 1, 80);
+    module_register(MODULE_NAME, mystats_table, 1, 81);
     if (!module_depend(MODULE_NAME, "eggdrop", 108, 4)) {
       module_undepend(MODULE_NAME);
       return "This module requires Eggdrop 1.8.4 or later.";
@@ -346,7 +345,7 @@ char *mystats_start(Function *global_funcs) {
     add_help_reference(MODULE_NAME ".help");
 
     /* Setup a MySQL connection */
-    strcpy(SQL_CASHE, "");
+    *SQL_CACHE = 0;
     mystats_hook_rehash();
     mystats_hook_daily();
     sql_query("UPDATE %s_chans SET status = '0' WHERE status = '2'", SQL_PREFIX);

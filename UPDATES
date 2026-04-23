@@ -1,3 +1,6 @@
+1.81 2026-04-23
+- Increase credential buffer sizes to fit modern MySQL users/passwords.
+  (phoskin)
 1.80 2023-03-16
 - Remove Context. (Michael Ortmann)
 - Fixed typos. (Michael Ortmann)
